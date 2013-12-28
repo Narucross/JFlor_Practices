@@ -1,0 +1,18 @@
+﻿<Window x:Class="BorderTesting.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:BorderTesting"
+        Title="MainWindow" Height="350" Width="650">
+
+    <Canvas Name="DrawingArea" Background="Teal" ClipToBounds="True">
+        <local:ResizeZone Canvas.Left="25" Canvas.Top="0" Canvas.ZIndex="0" />
+        <Border Name="ToTestBorder"   
+                Background="Black" BorderThickness="4" BorderBrush="Azure"
+                Canvas.Top="165" Canvas.Left="0" Width="250" Height="150" 
+                MouseDown="ToTestBorder_MouseDown" MouseMove="ToTestBorder_MouseMove" MouseUp="ToTestBorder_MouseUp"
+                IsHitTestVisible="True">                       
+            <TextBlock Width="Auto" Height="10" IsHitTestVisible="False" Background="AliceBlue" Foreground="Orange">Hello BRO</TextBlock>
+        </Border>
+        <local:ResizeZone Canvas.Left="100" Canvas.Top="0" Background="Cyan" Canvas.ZIndex="0"/>
+    </Canvas>
+</Window>
