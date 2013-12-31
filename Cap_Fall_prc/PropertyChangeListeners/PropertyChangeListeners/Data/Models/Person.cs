@@ -33,12 +33,12 @@ namespace PropertyChangeListeners.Data.Models
         public State_USA State { get; set; }
 
 
+        private static Random randy = new Random();
         public static Person generateRandomPerson()
         {
-            int x = 10196;
-            Random randy = new Random();
-            string FirstName = RandomCharacters(randy);
-            string LastName = RandomCharacters( randy);
+            //int seed = 10196;
+            string FirstName = RandomCharacters(ref randy);
+            string LastName = RandomCharacters( ref randy);
 
             byte Age = 21;
             Age = randomByte();
@@ -46,7 +46,7 @@ namespace PropertyChangeListeners.Data.Models
             {
                 //wasnt random
             }
-            string StreetAddress = RandomCharacters( randy);
+            string StreetAddress = RandomCharacters(ref  randy);
             int SSN = randy.Next(99999999);
             string City = "Riverside";
             State_USA State = State_USA.Alabama;
@@ -64,11 +64,11 @@ namespace PropertyChangeListeners.Data.Models
             return byter[0];
         }
 
-        private static string RandomCharacters(Random randy)
+        private static string RandomCharacters(ref Random randy)
         {
-            StreamReader reader = new StreamReader("C:\\Z_ProgrammingProjects\\PropertyChangeListeners\\PropertyChangeListeners\\Data\\DataSets\\TextFile1.txt");
+            StreamReader reader = new StreamReader("G:\\Z_Projects\\GitHub\\JFlor_Practices\\Cap_Fall_prc\\PropertyChangeListeners\\PropertyChangeListeners\\Data\\DataSets\\TextFile1.txt");
             String returnValue ="";
-            int num = randy.Next(10195);
+            int num = randy.Next(1,10195);
             for(int i=0; i<=num && !reader.EndOfStream;i++){
                 returnValue = reader.ReadLine();                
             }

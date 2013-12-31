@@ -1,0 +1,3 @@
+Projects worklog
+
+6:34 pm -- Fixed propertychanged project to actually have random names and shit...

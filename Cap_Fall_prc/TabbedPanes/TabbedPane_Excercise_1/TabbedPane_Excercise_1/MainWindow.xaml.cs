@@ -23,7 +23,14 @@ namespace TabbedPane_Excercise_1
         public MainWindow()
         {
             InitializeComponent();
-            //Code_Flextion_TPanel
+        }
+
+        private void fillTabbedDynamic() {             
+            //Code_Flextion_TPanel.Items
+            ItemCollection collection = new ItemCollection();
+            for (int i = 0; i < 4; i++) { 
+                
+            }
         }
     }
 }
