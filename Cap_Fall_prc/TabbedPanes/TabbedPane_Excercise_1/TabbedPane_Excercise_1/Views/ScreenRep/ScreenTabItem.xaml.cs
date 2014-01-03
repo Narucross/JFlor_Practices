@@ -13,26 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace TabbedPane_Excercise_1
+namespace TabbedPane_Excercise_1.Views.ScreenRep
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for ScreenTabItem.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class ScreenTabItem : UserControl
     {
-        public MainWindow()
+        public ScreenTabItem()
         {
             InitializeComponent();
-        }
-
-        private void fillTabbedDynamic() {             
-            // Code_Flextion_TPanel.Items
-            // Write down the intention of this code...
-            // 
-            int ram = 3;
-            for (int i = 0; i < ram; i++) { 
-            
-            }
         }
     }
 }

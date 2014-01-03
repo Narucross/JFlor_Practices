@@ -57,11 +57,8 @@
     </ApplicationDefinition>
     <Compile Include="ScreenUtils\ScreenBean.cs" />
     <Compile Include="ScreenUtils\ScreenDetector.cs" />
-    <Compile Include="Views\ScreenRep\ScreenTabItem.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Views\ScreenRep\ScreenTabItem.Designer.cs">
-      <DependentUpon>ScreenTabItem.cs</DependentUpon>
+    <Compile Include="Views\ScreenRep\ScreenTabItem.xaml.cs">
+      <DependentUpon>ScreenTabItem.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -75,6 +72,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\ScreenRep\ScreenTabItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
