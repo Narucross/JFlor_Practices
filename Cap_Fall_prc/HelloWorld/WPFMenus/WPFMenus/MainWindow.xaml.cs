@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WPFMenus.BindingPractice;
 
 namespace WPFMenus
 {
@@ -23,17 +24,28 @@ namespace WPFMenus
         public MainWindow()
         {
             InitializeComponent();
-            int x=3;
-            SimpleBean[] beans = new SimpleBean[x];
-            for (int i = 0; i < x; i++) {
-                var bean = new SimpleBean();
-                bean.Name = "New Object " + i;
-                bean.IsActive = i % 2 == 0;
-                beans[i] = bean;
-            }
-            var data = new RandomModel();
-            data.Themes = beans;
-            DataContext = data;
+            var reviews = new List<Review>
+            {
+                new Review(){Critic = "Wesley Morris" ,LetterGrade="B",ReviewSnippet="For better and worse, it weights nothing, which is not the same as saying it means nothing."},
+                new Review(){Critic ="Roger Ebert" ,LetterGrade="A-",ReviewSnippet="Like the hero of that film, the viewer of Inception is adrift in time and experience"},
+                new Review(){Critic ="Michael Phillips" ,LetterGrade="B",ReviewSnippet="Nolan conjures up a fever dream."},
+                //new Review(){Critic ="Joshua Flores" ,LetterGrade="B-",ReviewSnippet="Not great, interesting idea, and although the possibilities seem endless, Nolan had only proven he make use the same characters to be in 3 different action scenes at once."},
+            };
+
+            var reviews2 = new List<Review>
+            {
+                new Review(){Critic ="Michael Phillips" ,LetterGrade="B",ReviewSnippet="Nolan conjures up a fever dream."},
+                new Review(){Critic ="Roger Ebert" ,LetterGrade="A-",ReviewSnippet="Like the hero of that film, the viewer of Inception is adrift in time and experience"},
+                new Review(){Critic = "Wesley Morris" ,LetterGrade="B",ReviewSnippet="For better and worse, it weights nothing, which is not the same as saying it means nothing."},
+                new Review(){Critic ="Joshua Flores" ,LetterGrade="B-",ReviewSnippet="Not great, interesting idea, and although the possibilities seem endless, Nolan had only proven he make use the same characters to be in 3 different action scenes at once."},
+            };
+            
+            var templates = new ScreenSavers[] { 
+                new ScreenSavers(){TemplateName = "Default", Screens = reviews.ToArray()},
+                new ScreenSavers(){TemplateName = "Ragnarock", Screens = reviews2.ToArray()}
+            };
+
+            Code_Flextion_TPanel.ItemsSource = templates;
         }
 
         

@@ -94,6 +94,7 @@
                     </Grid>
                 </DataTemplate>
             </TabControl.ContentTemplate>
+            
         </TabControl>
 
         <!-- Buttons obligatory -->
