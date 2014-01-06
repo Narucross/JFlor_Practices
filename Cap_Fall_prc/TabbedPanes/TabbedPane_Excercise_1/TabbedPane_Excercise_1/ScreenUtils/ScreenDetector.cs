@@ -9,7 +9,7 @@ namespace TabbedPane_Excercise_1.ScreenUtils
     /// <summary>
     /// Find screens other screen related utility
     /// </summary>
-    class ScreenDetector
+    public class ScreenDetector
     {
         public static ScreenBean[] getRandomScreens(short numberOfScreens = 1)
         {

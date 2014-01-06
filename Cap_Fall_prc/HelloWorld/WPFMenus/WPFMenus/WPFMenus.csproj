@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{2D5E9F19-5ED8-430A-B1B1-372126CFBF92}</ProjectGuid>
+    <ProjectGuid>{BE386BBD-95C6-4590-A9ED-7F3F845D4452}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TabbedPane_Excercise_1</RootNamespace>
-    <AssemblyName>TabbedPane_Excercise_1</AssemblyName>
+    <RootNamespace>WPFMenus</RootNamespace>
+    <AssemblyName>WPFMenus</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -36,8 +36,6 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -55,12 +53,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="BindingPractice\Review.cs" />
-    <Compile Include="ScreenUtils\ScreenBean.cs" />
-    <Compile Include="ScreenUtils\ScreenDetector.cs" />
-    <Compile Include="Views\ScreenRep\ScreenTabItem.xaml.cs">
-      <DependentUpon>ScreenTabItem.xaml</DependentUpon>
-    </Compile>
+    <Compile Include="RandomModel.cs" />
+    <Compile Include="SimpleBean.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -73,10 +67,6 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Views\ScreenRep\ScreenTabItem.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -105,7 +95,12 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="JFlow_PowerButton_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="JFlow_Asterisk.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

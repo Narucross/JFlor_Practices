@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TabbedPane_Excercise_1.ScreenUtils
 {
-    class ScreenBean
+    public class ScreenBean
     {
         private double _height, _width;
         private int _screenNumber;

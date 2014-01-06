@@ -10,8 +10,8 @@
     </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100*"></ColumnDefinition>
             <ColumnDefinition Width="250*"></ColumnDefinition>
-            <ColumnDefinition Width="250"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="400*"></RowDefinition>
@@ -55,13 +55,47 @@
                 </TabControl>
             </TabItem>
         </TabControl>
-        
+
         <!--Tabbed Panel-->
         <TabControl Name="Code_Flextion_TPanel"
                     Grid.Column="1" Grid.Row="0"
-                    >            
+                    >
+            <!-- Header -->
+            <TabControl.ItemTemplate>
+                <DataTemplate>
+                    <!--Critic's Name-->
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Margin="0,0,4,0">Screen #: </TextBlock>
+                        <TextBlock Text="{Binding ScreenNumber}"/>
+                    </StackPanel>
+
+                </DataTemplate>
+            </TabControl.ItemTemplate>
+
+            <!-- Content -->
+            <TabControl.ContentTemplate>
+                <DataTemplate>
+                    <Grid Margin="5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="5"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <!-- Grade -->
+                        <TextBlock Text="Grade: " TextAlignment="Right"/>
+                        <TextBlock Text="{Binding Width}" Grid.Column="1"/>
+                        <!-- Reivew Snippet -->
+                        <TextBlock Text="Review: " TextAlignment="Right" Grid.Column="2"/>
+                        <TextBlock Text="{Binding Height}" TextWrapping="Wrap" Grid.Row="2" Grid.Column="1"/>
+                    </Grid>
+                </DataTemplate>
+            </TabControl.ContentTemplate>
         </TabControl>
-        
+
         <!-- Buttons obligatory -->
         <Border BorderBrush="AliceBlue" BorderThickness="3"
             Grid.Column="0" Grid.Row="1"
