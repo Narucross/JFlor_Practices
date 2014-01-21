@@ -8,5 +8,8 @@ namespace JFloresConsoleUtil.JFloresCMenuSystem
 {
     public class MenuMaster
     {
-    }
-}
+        private class starterMenu : BasicMenu { 
+        
+        }
+    }//end of Class
+}//end of namespace

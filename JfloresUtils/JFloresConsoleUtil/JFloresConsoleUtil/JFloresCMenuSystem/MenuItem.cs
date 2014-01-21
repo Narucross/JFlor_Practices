@@ -8,5 +8,9 @@ namespace JFloresConsoleUtil.JFloresCMenuSystem
 {
     public class MenuItem
     {
-    }
-}
+        //String context name
+        // Delegtte for action? method with parameters??
+
+
+    }//end of Class
+}//end of namespace
