@@ -6,10 +6,15 @@ using System.Threading.Tasks;
 
 namespace JFloresConsoleUtil.JFloresCMenuSystem
 {
+    /// <summary>
+    /// Contains the name of the option to be called, as well as the associated action to do.
+    /// </summary>
     public class MenuItem
     {
-        //String context name
-        // Delegtte for action? method with parameters??
+
+        public string optionName{get;set;}
+        
+        public Action MyAction{get;set;}
 
 
     }//end of Class
