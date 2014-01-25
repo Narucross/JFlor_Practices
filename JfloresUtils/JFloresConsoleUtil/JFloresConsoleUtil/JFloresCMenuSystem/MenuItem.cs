@@ -11,10 +11,17 @@ namespace JFloresConsoleUtil.JFloresCMenuSystem
     /// </summary>
     public class MenuItem
     {
+        public MenuItem(string name, Action action)
+        {
+            OptionName = name;
+            MyAction = action;
 
-        public string optionName{get;set;}
-        
-        public Action MyAction{get;set;}
+        }
+
+
+        public string OptionName { get; set; }
+
+        public Action MyAction { get; set; }
 
 
     }//end of Class

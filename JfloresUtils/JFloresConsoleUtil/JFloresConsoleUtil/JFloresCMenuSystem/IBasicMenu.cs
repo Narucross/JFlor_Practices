@@ -15,5 +15,16 @@ namespace JFloresConsoleUtil.JFloresCMenuSystem
         //Should this be an interface?
         MenuItem[] MyItems();
 
+        /// <summary>
+        /// The name of the menu, so that the main menu can tell you what it is...
+        /// </summary>
+        /// <returns></returns>
+        String MenuName();
+
+        /// <summary>
+        /// An optional property, to describe what the menu is suppose to do.
+        /// </summary>
+        /// <returns></returns>
+        String MenuDescription();
     }//end of Class
 }//end of namespace

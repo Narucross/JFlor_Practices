@@ -31,6 +31,27 @@ namespace JFloresConsoleUtil.JFloresCMenuSystem
              */
         }
 
+        /// <summary>
+        /// Note, returns true if there is continuation or the last option wansn't selected.
+        /// </summary>
+        public bool Run()
+        {
+            // Run a loop for a valuable number...
+            // Take the shit you horse crapper
+            int selection;
+            var correctSelection = false;
+            while (!correctSelection)
+            {
+                // Needs listszz and P method
+                correctSelection = Int32.TryParse(Console.ReadLine(), out selection);
+                if (correctSelection)
+                {
+
+                }
+            }
+            return true;
+        }
+
         private class StarterMenu : IBasicMenu
         {
             public StarterMenu()
@@ -41,6 +62,16 @@ namespace JFloresConsoleUtil.JFloresCMenuSystem
             private List<MenuItem> MyMenuList { get; set; }
 
             public MenuItem[] MyItems()
+            {
+                throw new NotImplementedException();
+            }
+
+            public string MenuName()
+            {
+                throw new NotImplementedException();
+            }
+
+            public string MenuDescription()
             {
                 throw new NotImplementedException();
             }
