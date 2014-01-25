@@ -21,7 +21,7 @@ namespace JFloresConsoleUtil.JFloresCReader
         /// <param name="printType">See inner descriptions for printing types and functions</param>
         public static void P(this object objectO, string preText = "", string postText = "", JuPrintTypes printType = JuPrintTypes.AllNewLines)
         {
-            if (objectO is IEnumerable)
+            if (objectO is IEnumerable && !(objectO is string))
             {
                 PrintEnumberable(objectO as IEnumerable, preText, postText, printType);
             }
@@ -135,8 +135,8 @@ namespace JFloresConsoleUtil.JFloresCReader
         /// <returns></returns>
         public static int GetInt32InRange(int bound1 = Int32.MaxValue, int bound2 = Int32.MinValue)
         {
-            var value = Math.Max(bound1, bound2);
-            bound2 = Math.Min(bound1, bound2);
+            var value = Math.Min(bound1, bound2);
+            bound2 = Math.Max(bound1, bound2);
             bound1 = value;
             var complete = false;
             while (!complete)// Same as regular GetInt32

@@ -23,6 +23,9 @@ namespace JFloresConsoleUtil.JFloresCMenuSystem
 
         public Action MyAction { get; set; }
 
-
+        public override string ToString()
+        {
+            return OptionName;
+        }
     }//end of Class
 }//end of namespace
