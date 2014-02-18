@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
         xmlns:custom="clr-namespace:CustomBehaviorsLibrary;assembly=CustomBehaviorsLibrary"
-        Title="MainWindow" Height="350" Width="525">
+        Title="Testing Behaviors" Height="350" Width="525">
     <Canvas>
         <Rectangle Canvas.Left="10" Canvas.Top="10" Fill="Yellow" Width="40" Height="60"></Rectangle>
         
@@ -19,5 +19,27 @@
             </i:Interaction.Behaviors>
         </Ellipse>
         
+        <ListBox Name="ColorsList" Canvas.Top="0" Canvas.Left="150" Background="Orchid" Width="100" Height="100" ClipToBounds="False">
+            <ListBoxItem Content="Blue" IsSelected="True"/>
+            <ListBoxItem Content="Green"/>
+            <ListBoxItem Content="Yellow"/>
+            <ListBoxItem Content="Orange"/>
+            <ListBoxItem Content="Red"/>
+            <ListBoxItem Content="Purple"/>
+            <ListBoxItem Content="Indigo"/>            
+            <ListBoxItem Content="Cyan"/>
+            <i:Interaction.Behaviors>
+                <custom:DragInCanvasBehavior/>
+            </i:Interaction.Behaviors>
+        </ListBox>
+        
+        <Rectangle Canvas.Top="100" Canvas.Left="150" Width="50" Height="50">
+            <Rectangle.Fill>
+                <Binding ElementName="ColorsList" Path="SelectedItem.Content"/>
+            </Rectangle.Fill>
+            <i:Interaction.Behaviors>
+                <custom:DragInCanvasBehavior/>
+            </i:Interaction.Behaviors>            
+        </Rectangle>
     </Canvas>
 </Window>
