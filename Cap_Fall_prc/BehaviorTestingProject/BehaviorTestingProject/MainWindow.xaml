@@ -6,7 +6,7 @@
         Title="Testing Behaviors" Height="350" Width="525">
     <Canvas>
         <Rectangle Canvas.Left="10" Canvas.Top="10" Fill="Yellow" Width="40" Height="60"></Rectangle>
-        
+
         <Ellipse Canvas.Left="10" Canvas.Top="70" Fill="Blue" Width="80" Height="60">
             <i:Interaction.Behaviors>
                 <custom:DragInCanvasBehavior/>
@@ -16,9 +16,10 @@
         <Ellipse Canvas.Left="80" Canvas.Top="70" Fill="OrangeRed" Width="40" Height="70">
             <i:Interaction.Behaviors>
                 <custom:DragInCanvasBehavior/>
+                <custom:DependencyPropertyBehaviorTest StartAsYellow="True" />
             </i:Interaction.Behaviors>
         </Ellipse>
-        
+
         <ListBox Name="ColorsList" Canvas.Top="0" Canvas.Left="150" Background="Orchid" Width="100" Height="100" ClipToBounds="False">
             <ListBoxItem Content="Blue" IsSelected="True"/>
             <ListBoxItem Content="Green"/>
@@ -26,20 +27,32 @@
             <ListBoxItem Content="Orange"/>
             <ListBoxItem Content="Red"/>
             <ListBoxItem Content="Purple"/>
-            <ListBoxItem Content="Indigo"/>            
+            <ListBoxItem Content="Indigo"/>
             <ListBoxItem Content="Cyan"/>
             <i:Interaction.Behaviors>
                 <custom:DragInCanvasBehavior/>
             </i:Interaction.Behaviors>
         </ListBox>
-        
-        <Rectangle Canvas.Top="100" Canvas.Left="150" Width="50" Height="50">
+
+        <Rectangle Canvas.Top="105" Canvas.Left="150" Width="50" Height="50">
             <Rectangle.Fill>
                 <Binding ElementName="ColorsList" Path="SelectedItem.Content"/>
             </Rectangle.Fill>
             <i:Interaction.Behaviors>
                 <custom:DragInCanvasBehavior/>
-            </i:Interaction.Behaviors>            
+            </i:Interaction.Behaviors>
         </Rectangle>
+        <TextBlock Name="DebuggerTextBlock">Default stuff</TextBlock>
+        <Canvas Canvas.Left="500" Canvas.Top="0" Width="250" Height="250" Background="OldLace" ClipToBounds="True">
+
+            <Ellipse Canvas.Left="80" Canvas.Top="70" Fill="OrangeRed" Width="40" Height="70"
+                     MouseLeave="UIElement_OnMouseLeave"
+                     >
+                <i:Interaction.Behaviors>
+                    <custom:DragInCanvasBehavior/>
+                </i:Interaction.Behaviors>
+
+            </Ellipse>
+        </Canvas>
     </Canvas>
 </Window>

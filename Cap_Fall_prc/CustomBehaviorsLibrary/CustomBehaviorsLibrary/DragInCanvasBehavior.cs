@@ -54,7 +54,7 @@ namespace CustomBehaviorsLibrary
             if (_isDragging)
             {
                 Point point = e.GetPosition(_canvas);
-
+                // how to pin it to the bounds of the canvas?
                 AssociatedObject.SetValue(Canvas.TopProperty, point.Y - _mouseOffset.Y);
                 AssociatedObject.SetValue(Canvas.LeftProperty, point.X - _mouseOffset.X);
             }

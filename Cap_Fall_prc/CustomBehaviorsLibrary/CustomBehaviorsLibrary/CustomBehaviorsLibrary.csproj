@@ -45,7 +45,10 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DependencyPropertyBehaviorTest.cs" />
+    <Compile Include="DragAsShapeBehavior.cs" />
     <Compile Include="DragInCanvasBehavior.cs" />
+    <Compile Include="DroppedStealColorBehavior.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

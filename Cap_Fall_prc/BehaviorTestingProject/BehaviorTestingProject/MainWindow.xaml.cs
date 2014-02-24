@@ -24,5 +24,10 @@ namespace BehaviorTestingProject
         {
             InitializeComponent();
         }
+
+        private void UIElement_OnMouseLeave(object sender, MouseEventArgs e)
+        {
+            DebuggerTextBlock.Text = "Has left the area";
+        }
     }
 }
