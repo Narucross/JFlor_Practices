@@ -5,11 +5,11 @@
         xmlns:custom="clr-namespace:CustomBehaviorsLibrary;assembly=CustomBehaviorsLibrary"
         Title="Testing Behaviors" Height="350" Width="525">
     <Canvas>
-        <Rectangle Canvas.Left="10" Canvas.Top="10" Fill="Yellow" Width="40" Height="60"></Rectangle>
+        <Rectangle Canvas.Left="10" Canvas.Top="10" Fill="{Binding ElementName=Ellipse1, Path=Fill}" Width="40" Height="60"></Rectangle>
 
-        <Ellipse Canvas.Left="10" Canvas.Top="70" Fill="Blue" Width="80" Height="60">
+        <Ellipse Name="Ellipse1" Canvas.Left="10" Canvas.Top="70" Fill="Blue" Width="80" Height="60">
             <i:Interaction.Behaviors>
-                <custom:DragInCanvasBehavior/>
+                <custom:DragInCanvasBehavior IsPanWithinBounds="True" />
             </i:Interaction.Behaviors>
         </Ellipse>
 

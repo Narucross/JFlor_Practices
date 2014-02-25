@@ -3,11 +3,34 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Interactivity;
 using System.Windows.Media;
+using System.Windows.Shapes;
 
 namespace CustomBehaviorsLibrary
 {
+    /// <summary>
+    /// Basically Panning
+    /// </summary>
     public class DragInCanvasBehavior : Behavior<UIElement>
     {
+        #region Dependency Properties
+
+        public static readonly DependencyProperty IsPansWithinBoundsDependencyProperty =
+            DependencyProperty.Register("IsPanWithinBounds", typeof(bool), typeof(DragInCanvasBehavior));
+
+        public bool IsPanWithinBounds
+        {
+            get
+            {
+                return (bool)GetValue(IsPansWithinBoundsDependencyProperty);
+            }
+            set
+            {
+                SetValue(IsPansWithinBoundsDependencyProperty, value);
+            }
+        }
+
+        #endregion
+
         protected override void OnAttached()
         {
             base.OnAttached();
@@ -57,6 +80,16 @@ namespace CustomBehaviorsLibrary
                 // how to pin it to the bounds of the canvas?
                 AssociatedObject.SetValue(Canvas.TopProperty, point.Y - _mouseOffset.Y);
                 AssociatedObject.SetValue(Canvas.LeftProperty, point.X - _mouseOffset.X);
+            }
+            if (IsPanWithinBounds)
+            {
+                // Change a color?
+                _canvas.Width
+                if (AssociatedObject is Shape)
+                {
+                    var darko = AssociatedObject as Shape;
+                    darko.Fill = Brushes.Red;
+                }
             }
         }
 
